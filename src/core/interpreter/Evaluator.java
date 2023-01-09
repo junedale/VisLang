@@ -2,14 +2,17 @@ package core.interpreter;
 
 import core.antlr4.VisLangBaseVisitor;
 import core.antlr4.VisLangParser;
+import core.ast.ConditionalExpr;
 import core.ast.Literals;
 
 public class Evaluator extends VisLangBaseVisitor<Value> {
 
     private final Literals literal;
+    private final ConditionalExpr comparison;
 
     public Evaluator() {
-        literal = new Literals();
+        literal    = new Literals();
+        comparison = new ConditionalExpr(this);
     }
 
     @Override
@@ -35,5 +38,10 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitNull(VisLangParser.NullContext ctx) {
         return literal.evaluate();
+    }
+
+    @Override
+    public Value visitComparison(VisLangParser.ComparisonContext ctx) {
+        return comparison.evaluate(ctx);
     }
 }
