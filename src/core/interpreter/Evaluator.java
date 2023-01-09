@@ -2,10 +2,7 @@ package core.interpreter;
 
 import core.antlr4.VisLangBaseVisitor;
 import core.antlr4.VisLangParser;
-import core.ast.ConditionalExpr;
-import core.ast.Literals;
-import core.ast.LogicalExpr;
-import core.ast.UnaryExpr;
+import core.ast.*;
 
 public class Evaluator extends VisLangBaseVisitor<Value> {
 
@@ -13,12 +10,14 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     private final ConditionalExpr comparison;
     private final LogicalExpr logic;
     private final UnaryExpr unary;
+    private final BinaryExpr binary;
 
     public Evaluator() {
         literal    = new Literals();
         comparison = new ConditionalExpr(this);
         logic      = new LogicalExpr(this);
         unary      = new UnaryExpr(this);
+        binary     = new BinaryExpr(this);
     }
 
     @Override
@@ -54,6 +53,16 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitUnaryNot(VisLangParser.UnaryNotContext ctx) {
         return unary.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitBinaryMul(VisLangParser.BinaryMulContext ctx) {
+        return binary.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitBinaryAdd(VisLangParser.BinaryAddContext ctx) {
+        return binary.evaluate(ctx);
     }
 
     @Override
