@@ -5,17 +5,20 @@ import core.antlr4.VisLangParser;
 import core.ast.ConditionalExpr;
 import core.ast.Literals;
 import core.ast.LogicalExpr;
+import core.ast.UnaryExpr;
 
 public class Evaluator extends VisLangBaseVisitor<Value> {
 
     private final Literals literal;
     private final ConditionalExpr comparison;
     private final LogicalExpr logic;
+    private final UnaryExpr unary;
 
     public Evaluator() {
         literal    = new Literals();
         comparison = new ConditionalExpr(this);
         logic      = new LogicalExpr(this);
+        unary      = new UnaryExpr(this);
     }
 
     @Override
@@ -41,6 +44,16 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitNull(VisLangParser.NullContext ctx) {
         return literal.evaluate();
+    }
+
+    @Override
+    public Value visitUnaryMin(VisLangParser.UnaryMinContext ctx) {
+        return unary.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitUnaryNot(VisLangParser.UnaryNotContext ctx) {
+        return unary.evaluate(ctx);
     }
 
     @Override
