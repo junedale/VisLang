@@ -13,6 +13,7 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     private final UnaryExpr unary;
     private final BinaryExpr binary;
     private final AssignmentStatement assign;
+    private final CallStatement call;
 
     public Evaluator(ScopeResolver scope) {
         this.scope = scope;
@@ -22,6 +23,7 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
         unary      = new UnaryExpr(this);
         binary     = new BinaryExpr(this);
         assign     = new AssignmentStatement(this, scope);
+        call       = new CallStatement(this);
     }
 
     @Override
@@ -92,5 +94,15 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitAssignment(VisLangParser.AssignmentContext ctx) {
         return assign.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitPrint(VisLangParser.PrintContext ctx) {
+        return call.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitPrintln(VisLangParser.PrintlnContext ctx) {
+        return call.evaluate(ctx);
     }
 }
