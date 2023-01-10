@@ -14,6 +14,7 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     private final BinaryExpr binary;
     private final AssignmentStatement assign;
     private final CallStatement call;
+    private final Block block;
 
     public Evaluator(ScopeResolver scope) {
         this.scope = scope;
@@ -24,6 +25,7 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
         binary     = new BinaryExpr(this);
         assign     = new AssignmentStatement(this, scope);
         call       = new CallStatement(this);
+        block      = new Block(this, scope);
     }
 
     @Override
@@ -104,5 +106,11 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitPrintln(VisLangParser.PrintlnContext ctx) {
         return call.evaluate(ctx);
+    }
+
+    public void setScope(ScopeResolver scope) {
+        this.scope = scope;
+        assign.setScope(scope);
+        block.setScope(scope);
     }
 }
