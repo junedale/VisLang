@@ -6,18 +6,22 @@ import core.ast.*;
 
 public class Evaluator extends VisLangBaseVisitor<Value> {
 
+    private ScopeResolver scope;
     private final Literals literal;
     private final ConditionalExpr comparison;
     private final LogicalExpr logic;
     private final UnaryExpr unary;
     private final BinaryExpr binary;
+    private final AssignmentStatement assign;
 
-    public Evaluator() {
+    public Evaluator(ScopeResolver scope) {
+        this.scope = scope;
         literal    = new Literals();
         comparison = new ConditionalExpr(this);
         logic      = new LogicalExpr(this);
         unary      = new UnaryExpr(this);
         binary     = new BinaryExpr(this);
+        assign     = new AssignmentStatement(this, scope);
     }
 
     @Override
@@ -78,5 +82,15 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitLogicalOr(VisLangParser.LogicalOrContext ctx) {
         return logic.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitAssignAction(VisLangParser.AssignActionContext ctx) {
+        return assign.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitAssignment(VisLangParser.AssignmentContext ctx) {
+        return assign.evaluate(ctx);
     }
 }
