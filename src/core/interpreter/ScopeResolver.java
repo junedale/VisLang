@@ -50,6 +50,10 @@ public class ScopeResolver {
         return ancestor == null;
     }
 
+    public ScopeResolver getAncestor() {
+        return this.ancestor;
+    }
+
     @Override
     public String toString() {
         return isGlobal()? "global" : "block";
