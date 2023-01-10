@@ -2,6 +2,8 @@ package core;
 
 import core.antlr4.VisLangLexer;
 import core.antlr4.VisLangParser;
+import core.interpreter.Evaluator;
+import core.interpreter.ScopeResolver;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -14,6 +16,9 @@ public class Main {
         VisLangLexer lexer         = new VisLangLexer(input);
         CommonTokenStream tokens   = new CommonTokenStream(lexer);
         VisLangParser parser       = new VisLangParser(tokens);
+        ScopeResolver scope        = new ScopeResolver();
+        Evaluator evaluator        = new Evaluator(scope);
         ParseTree tree             = parser.program();
+        evaluator.visit(tree);
     }
 }
