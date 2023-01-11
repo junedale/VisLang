@@ -1,7 +1,7 @@
 package core.interpreter.ast;
 
-import core.antlr4.VisLangParser.PrintContext;
-import core.antlr4.VisLangParser.PrintlnContext;
+import core.interpreter.parser.VisLangParser.PrintContext;
+import core.interpreter.parser.VisLangParser.PrintlnContext;
 import core.interpreter.Evaluator;
 import core.interpreter.Value;
 

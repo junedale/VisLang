@@ -1,7 +1,7 @@
 package core.interpreter.ast;
 
-import core.antlr4.VisLangLexer;
-import core.antlr4.VisLangParser.ComparisonContext;
+import core.interpreter.parser.VisLangLexer;
+import core.interpreter.parser.VisLangParser.ComparisonContext;
 import core.interpreter.Evaluator;
 import core.interpreter.Value;
 

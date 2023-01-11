@@ -1,8 +1,8 @@
 package core.interpreter.ast;
 
-import core.antlr4.VisLangLexer;
-import core.antlr4.VisLangParser.BinaryAddContext;
-import core.antlr4.VisLangParser.BinaryMulContext;
+import core.interpreter.parser.VisLangLexer;
+import core.interpreter.parser.VisLangParser.BinaryAddContext;
+import core.interpreter.parser.VisLangParser.BinaryMulContext;
 import core.interpreter.Evaluator;
 import core.interpreter.Value;
 

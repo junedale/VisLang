@@ -1,7 +1,7 @@
 package core.interpreter.ast;
 
-import core.antlr4.VisLangParser.UnaryNotContext;
-import core.antlr4.VisLangParser.UnaryMinContext;
+import core.interpreter.parser.VisLangParser.UnaryNotContext;
+import core.interpreter.parser.VisLangParser.UnaryMinContext;
 import core.interpreter.Evaluator;
 import core.interpreter.Value;
 

@@ -1,7 +1,7 @@
 package core.interpreter.ast;
 
-import core.antlr4.VisLangParser.DoWhileStatContext;
-import core.antlr4.VisLangParser.WhileStatContext;
+import core.interpreter.parser.VisLangParser.DoWhileStatContext;
+import core.interpreter.parser.VisLangParser.WhileStatContext;
 import core.interpreter.Evaluator;
 import core.interpreter.Value;
 import core.interpreter.exception.ELoopException;

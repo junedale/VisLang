@@ -1,9 +1,9 @@
 package core.interpreter.ast;
 
-import core.antlr4.VisLangParser.IntLiteralContext;
-import core.antlr4.VisLangParser.DoubleLiteralContext;
-import core.antlr4.VisLangParser.StringLiteralContext;
-import core.antlr4.VisLangParser.BooleanLiteralContext;
+import core.interpreter.parser.VisLangParser.IntLiteralContext;
+import core.interpreter.parser.VisLangParser.DoubleLiteralContext;
+import core.interpreter.parser.VisLangParser.StringLiteralContext;
+import core.interpreter.parser.VisLangParser.BooleanLiteralContext;
 import core.interpreter.Value;
 
 public class Literals {

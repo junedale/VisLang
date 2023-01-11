@@ -1,7 +1,7 @@
 package core.interpreter;
 
-import core.antlr4.VisLangBaseVisitor;
-import core.antlr4.VisLangParser;
+import core.interpreter.parser.VisLangBaseVisitor;
+import core.interpreter.parser.VisLangParser;
 import core.interpreter.ast.*;
 
 public class Evaluator extends VisLangBaseVisitor<Value> {
