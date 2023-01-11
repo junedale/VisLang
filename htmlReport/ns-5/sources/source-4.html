@@ -1,0 +1,309 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > VisLangVisitor</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">core.interpreter.parser</a>
+</div>
+
+<h1>Coverage Summary for Class: VisLangVisitor (core.interpreter.parser)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">VisLangVisitor</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// Generated from java-escape by ANTLR 4.11.1
+&nbsp;package core.interpreter.parser;
+&nbsp;import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+&nbsp;
+&nbsp;/**
+&nbsp; * This interface defines a complete generic visitor for a parse tree produced
+&nbsp; * by {@link VisLangParser}.
+&nbsp; *
+&nbsp; * @param &lt;T&gt; The return type of the visit operation. Use {@link Void} for
+&nbsp; * operations with no return type.
+&nbsp; */
+&nbsp;public interface VisLangVisitor&lt;T&gt; extends ParseTreeVisitor&lt;T&gt; {
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#program}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitProgram(VisLangParser.ProgramContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#body}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitBody(VisLangParser.BodyContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#declaration}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitDeclaration(VisLangParser.DeclarationContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#funDecl}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitFunDecl(VisLangParser.FunDeclContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#params}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitParams(VisLangParser.ParamsContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#statement}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitStatement(VisLangParser.StatementContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#ifStat}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitIfStat(VisLangParser.IfStatContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#simpleIf}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitSimpleIf(VisLangParser.SimpleIfContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#complexIf}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitComplexIf(VisLangParser.ComplexIfContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#doWhileStat}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitDoWhileStat(VisLangParser.DoWhileStatContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#whileStat}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitWhileStat(VisLangParser.WhileStatContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#forStat}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitForStat(VisLangParser.ForStatContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#callStat}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitCallStat(VisLangParser.CallStatContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code print}
+&nbsp;	 * labeled alternative in {@link VisLangParser#printCall}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitPrint(VisLangParser.PrintContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code println}
+&nbsp;	 * labeled alternative in {@link VisLangParser#printCall}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitPrintln(VisLangParser.PrintlnContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#funCall}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitFunCall(VisLangParser.FunCallContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#block}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitBlock(VisLangParser.BlockContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code identifier}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitIdentifier(VisLangParser.IdentifierContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code binaryMul}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitBinaryMul(VisLangParser.BinaryMulContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code comparison}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitComparison(VisLangParser.ComparisonContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code intLiteral}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitIntLiteral(VisLangParser.IntLiteralContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code logicalAnd}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitLogicalAnd(VisLangParser.LogicalAndContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code assignAction}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitAssignAction(VisLangParser.AssignActionContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code null}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitNull(VisLangParser.NullContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code stringLiteral}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitStringLiteral(VisLangParser.StringLiteralContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code groupings}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitGroupings(VisLangParser.GroupingsContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code unaryMin}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitUnaryMin(VisLangParser.UnaryMinContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code doubleLiteral}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitDoubleLiteral(VisLangParser.DoubleLiteralContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code logicalOr}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitLogicalOr(VisLangParser.LogicalOrContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code booleanLiteral}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitBooleanLiteral(VisLangParser.BooleanLiteralContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code equality}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitEquality(VisLangParser.EqualityContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code return}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitReturn(VisLangParser.ReturnContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code unaryNot}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitUnaryNot(VisLangParser.UnaryNotContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by the {@code binaryAdd}
+&nbsp;	 * labeled alternative in {@link VisLangParser#expr}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitBinaryAdd(VisLangParser.BinaryAddContext ctx);
+&nbsp;	/**
+&nbsp;	 * Visit a parse tree produced by {@link VisLangParser#assignment}.
+&nbsp;	 * @param ctx the parse tree
+&nbsp;	 * @return the visitor result
+&nbsp;	 */
+&nbsp;	T visitAssignment(VisLangParser.AssignmentContext ctx);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-01-11 19:42</div>
+</div>
+</body>
+</html>

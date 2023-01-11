@@ -1,0 +1,363 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > VisLangBaseVisitor</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">core.interpreter.parser</a>
+</div>
+
+<h1>Coverage Summary for Class: VisLangBaseVisitor (core.interpreter.parser)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">VisLangBaseVisitor</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    13.9%
+  </span>
+  <span class="absValue">
+    (5/36)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    13.9%
+  </span>
+  <span class="absValue">
+    (5/36)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;// Generated from java-escape by ANTLR 4.11.1
+&nbsp;package core.interpreter.parser;
+&nbsp;import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
+&nbsp;
+&nbsp;/**
+&nbsp; * This class provides an empty implementation of {@link VisLangVisitor},
+&nbsp; * which can be extended to create a visitor which only needs to handle a subset
+&nbsp; * of the available methods.
+&nbsp; *
+&nbsp; * @param &lt;T&gt; The return type of the visit operation. Use {@link Void} for
+&nbsp; * operations with no return type.
+&nbsp; */
+&nbsp;@SuppressWarnings(&quot;CheckReturnValue&quot;)
+<b class="fc">&nbsp;public class VisLangBaseVisitor&lt;T&gt; extends AbstractParseTreeVisitor&lt;T&gt; implements VisLangVisitor&lt;T&gt; {</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="fc">&nbsp;	@Override public T visitProgram(VisLangParser.ProgramContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="fc">&nbsp;	@Override public T visitBody(VisLangParser.BodyContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitDeclaration(VisLangParser.DeclarationContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitFunDecl(VisLangParser.FunDeclContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitParams(VisLangParser.ParamsContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="fc">&nbsp;	@Override public T visitStatement(VisLangParser.StatementContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitIfStat(VisLangParser.IfStatContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitSimpleIf(VisLangParser.SimpleIfContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitComplexIf(VisLangParser.ComplexIfContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitDoWhileStat(VisLangParser.DoWhileStatContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitWhileStat(VisLangParser.WhileStatContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitForStat(VisLangParser.ForStatContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="fc">&nbsp;	@Override public T visitCallStat(VisLangParser.CallStatContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitPrint(VisLangParser.PrintContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitPrintln(VisLangParser.PrintlnContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitFunCall(VisLangParser.FunCallContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitBlock(VisLangParser.BlockContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitIdentifier(VisLangParser.IdentifierContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitBinaryMul(VisLangParser.BinaryMulContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitComparison(VisLangParser.ComparisonContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitIntLiteral(VisLangParser.IntLiteralContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitLogicalAnd(VisLangParser.LogicalAndContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitAssignAction(VisLangParser.AssignActionContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitNull(VisLangParser.NullContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitStringLiteral(VisLangParser.StringLiteralContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitGroupings(VisLangParser.GroupingsContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitUnaryMin(VisLangParser.UnaryMinContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitDoubleLiteral(VisLangParser.DoubleLiteralContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitLogicalOr(VisLangParser.LogicalOrContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitBooleanLiteral(VisLangParser.BooleanLiteralContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitEquality(VisLangParser.EqualityContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitReturn(VisLangParser.ReturnContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitUnaryNot(VisLangParser.UnaryNotContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitBinaryAdd(VisLangParser.BinaryAddContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;	/**
+&nbsp;	 * {@inheritDoc}
+&nbsp;	 *
+&nbsp;	 * &lt;p&gt;The default implementation returns the result of calling
+&nbsp;	 * {@link #visitChildren} on {@code ctx}.&lt;/p&gt;
+&nbsp;	 */
+<b class="nc">&nbsp;	@Override public T visitAssignment(VisLangParser.AssignmentContext ctx) { return visitChildren(ctx); }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-01-11 19:42</div>
+</div>
+</body>
+</html>
