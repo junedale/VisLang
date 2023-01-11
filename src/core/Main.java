@@ -12,7 +12,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class Main {
 
     public static void main(String[] args) {
-        CharStream input           = CharStreams.fromString("num = 0;");
+        CharStream input           = CharStreams.fromString("println(!true);");
         VisLangLexer lexer         = new VisLangLexer(input);
         CommonTokenStream tokens   = new CommonTokenStream(lexer);
         VisLangParser parser       = new VisLangParser(tokens);
