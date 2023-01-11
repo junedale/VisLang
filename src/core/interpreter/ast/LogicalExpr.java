@@ -1,4 +1,4 @@
-package core.ast;
+package core.interpreter.ast;
 
 import core.antlr4.VisLangParser.LogicalAndContext;
 import core.antlr4.VisLangParser.LogicalOrContext;

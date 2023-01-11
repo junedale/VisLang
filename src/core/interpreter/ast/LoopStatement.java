@@ -1,11 +1,9 @@
-package core.ast;
+package core.interpreter.ast;
 
 import core.antlr4.VisLangParser.DoWhileStatContext;
 import core.antlr4.VisLangParser.WhileStatContext;
-import core.antlr4.VisLangParser.ForStatContext;
 import core.interpreter.Evaluator;
 import core.interpreter.Value;
-import core.interpreter.exception.CLoopException;
 import core.interpreter.exception.ELoopException;
 
 public class LoopStatement {
