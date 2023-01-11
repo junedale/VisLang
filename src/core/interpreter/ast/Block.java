@@ -19,7 +19,6 @@ public class Block {
 
     public Value evaluate(BlockContext ctx) {
         eval.setScope(new ScopeResolver(scope, false));
-        System.out.println(scope.isGlobal());
         for(StatementContext stat : ctx.statement())
             eval.visit(stat);
         for(ExprContext expr : ctx.expr())
