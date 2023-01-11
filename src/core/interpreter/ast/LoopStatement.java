@@ -15,7 +15,7 @@ public class LoopStatement {
     }
 
     public Value evaluate(DoWhileStatContext ctx) {
-        Value condition = eval.visit(ctx.expr());
+        Value condition;
         do {
             try {
                 eval.visit(ctx.block());
