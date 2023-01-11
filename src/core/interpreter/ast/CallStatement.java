@@ -18,7 +18,7 @@ public class CallStatement {
         if(val == null) {
             throw new RuntimeException("Cannot resolve " + ctx.getText());
         } else {
-            System.out.print(eval.visit(ctx.expr()).toString());
+            System.out.print(val);
         }
         return Value.VOID;
     }
@@ -28,7 +28,7 @@ public class CallStatement {
         if(val == null) {
             System.out.println();
         } else {
-            System.out.println(eval.visit(ctx.expr()).toString());
+            System.out.println(val);
         }
         return Value.VOID;
     }
