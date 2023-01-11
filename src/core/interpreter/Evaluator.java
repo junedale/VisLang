@@ -15,6 +15,7 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     private final AssignmentStatement assign;
     private final CallStatement call;
     private final Block block;
+    private final LoopStatement loop;
 
     public Evaluator(ScopeResolver scope) {
         this.scope = scope;
@@ -26,6 +27,7 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
         assign     = new AssignmentStatement(this, scope);
         call       = new CallStatement(this);
         block      = new Block(this, scope);
+        loop       = new LoopStatement(this);
     }
 
     @Override
@@ -88,10 +90,10 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
         return logic.evaluate(ctx);
     }
 
-    @Override
-    public Value visitAssignAction(VisLangParser.AssignActionContext ctx) {
-        return assign.evaluate(ctx);
-    }
+//    @Override
+//    public Value visitAssignAction(VisLangParser.AssignActionContext ctx) {
+//        return assign.evaluate(ctx);
+//    }
 
     @Override
     public Value visitAssignment(VisLangParser.AssignmentContext ctx) {
@@ -106,6 +108,26 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitPrintln(VisLangParser.PrintlnContext ctx) {
         return call.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitIdentifier(VisLangParser.IdentifierContext ctx) {
+        return assign.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitBlock(VisLangParser.BlockContext ctx) {
+        return block.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitWhileStat(VisLangParser.WhileStatContext ctx) {
+        return loop.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitDoWhileStat(VisLangParser.DoWhileStatContext ctx) {
+        return loop.evaluate(ctx);
     }
 
     public void setScope(ScopeResolver scope) {
