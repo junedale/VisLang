@@ -90,11 +90,6 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
         return logic.evaluate(ctx);
     }
 
-//    @Override
-//    public Value visitAssignAction(VisLangParser.AssignActionContext ctx) {
-//        return assign.evaluate(ctx);
-//    }
-
     @Override
     public Value visitAssignment(VisLangParser.AssignmentContext ctx) {
         return assign.evaluate(ctx);
@@ -128,6 +123,11 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitDoWhileStat(VisLangParser.DoWhileStatContext ctx) {
         return loop.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitAssignAction(VisLangParser.AssignActionContext ctx) {
+        return assign.evaluate(ctx);
     }
 
     public void setScope(ScopeResolver scope) {
