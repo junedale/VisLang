@@ -84,7 +84,7 @@ expr
     | expr op=(Add | Sub) expr                                                                #binaryAdd
     | expr op=(Langle | Rangle | Leq | Req) expr                                              #comparison
     | expr op=(Eqeq | Neq) expr                                                               #equality
-    | Identifier op=(Add_Assign | Sub_Assign | Mul_Assign | Div_Assign | Mod_Assign) expr     #assignAction
+    | expr op=(Add_Assign | Sub_Assign | Mul_Assign | Div_Assign | Mod_Assign) expr           #assignAction
     | expr And expr                                                                           #logicalAnd
     | expr Or expr                                                                            #logicalOr
     | Integer                                                                                 #intLiteral
