@@ -1,5 +1,5 @@
 // Generated from java-escape by ANTLR 4.11.1
-package core.antlr4;
+package core.interpreter.parser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
