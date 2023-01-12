@@ -16,6 +16,8 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     private final CallStatement call;
     private final Block block;
     private final LoopStatement loop;
+    private final DecisionStatement decision;
+    private final EqualityExpr equality;
 
     public Evaluator(ScopeResolver scope) {
         this.scope = scope;
@@ -28,6 +30,8 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
         call       = new CallStatement(this);
         block      = new Block(this, scope);
         loop       = new LoopStatement(this);
+        decision   = new DecisionStatement(this);
+        equality   = new EqualityExpr(this);
     }
 
     @Override
@@ -128,6 +132,17 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitAssignAction(VisLangParser.AssignActionContext ctx) {
         return assign.evaluate(ctx);
+    }
+
+
+    @Override
+    public Value visitEquality(VisLangParser.EqualityContext ctx) {
+        return equality.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitIfStatement(VisLangParser.IfStatementContext ctx) {
+        return decision.evaluate(ctx);
     }
 
     public void setScope(ScopeResolver scope) {
