@@ -4,7 +4,7 @@ public class Value {
     public static final Value NULL = new Value();
     public static final Value VOID = new Value();
 
-    private Object value;
+    private final Object value;
 
     private Value() {
         value = new Object();
@@ -32,7 +32,7 @@ public class Value {
     }
 
     public Double toDouble() {
-        return (Double) value;
+        return Double.valueOf(value.toString());
     }
 
     public String toStr() {
