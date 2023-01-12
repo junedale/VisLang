@@ -78,9 +78,18 @@ public class Value {
         return value.equals(obj);
     }
 
-    @Override
-    public int hashCode() {
-        return value.hashCode();
+    public String getType() {
+        if(this.isInteger()) {
+            return "Integer";
+        } else if(this.isDouble()) {
+            return "Double";
+        } else if(this.isString()) {
+            return "String";
+        } else if(this.isBoolean()) {
+            return "Boolean";
+        } else {
+            return "Null";
+        }
     }
 
     @Override
