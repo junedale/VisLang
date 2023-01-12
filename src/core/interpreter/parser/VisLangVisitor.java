@@ -47,23 +47,29 @@ public interface VisLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStatement(VisLangParser.StatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link VisLangParser#ifStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIfStatement(VisLangParser.IfStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link VisLangParser#ifStat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitIfStat(VisLangParser.IfStatContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link VisLangParser#simpleIf}.
+	 * Visit a parse tree produced by {@link VisLangParser#elifStat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSimpleIf(VisLangParser.SimpleIfContext ctx);
+	T visitElifStat(VisLangParser.ElifStatContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link VisLangParser#complexIf}.
+	 * Visit a parse tree produced by {@link VisLangParser#elseStat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitComplexIf(VisLangParser.ComplexIfContext ctx);
+	T visitElseStat(VisLangParser.ElseStatContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link VisLangParser#doWhileStat}.
 	 * @param ctx the parse tree
