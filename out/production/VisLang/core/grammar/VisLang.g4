@@ -25,27 +25,29 @@ params
 
 statement
     : assignment Semicolon
-    | ifStat
+    | ifStatement
     | doWhileStat
     | whileStat
     | forStat
     | callStat Semicolon
     ;
 
+ifStatement
+    : ifStat elifStat*? elseStat?
+    ;
+
 ifStat
-    : simpleIf
-    | complexIf
-    ;
-
-simpleIf
-    : If Lparen expr Rparen Lbrace block Rbrace (Else Lbrace block Rbrace)?
-    ;
-
-complexIf
     : If Lparen expr Rparen Lbrace block Rbrace
-      (Else If Lparen expr Rparen Lbrace block Rbrace)*?
-      (Else Lbrace block Rbrace)?
     ;
+
+elifStat
+    : Else If Lparen expr Rparen Lbrace block Rbrace
+    ;
+
+elseStat
+    : Else Lbrace block Rbrace
+    ;
+
 
 doWhileStat
     : Do Lbrace block Rbrace While Lparen expr Rparen Semicolon
