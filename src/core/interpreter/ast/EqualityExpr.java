@@ -31,9 +31,7 @@ public class EqualityExpr {
     private Value isEqual(Value left, Value right) {
         if(left.isInteger() && right.isInteger()) {
             return new Value(left.toInt().equals(right.toInt()));
-        } else if(left.isDouble() && right.isDouble()) {
-            return new Value(left.toDouble().equals(right.toDouble()));
-        } else if((left.isInteger() || left.isDouble()) && (right.isInteger() || right.isDouble())) {
+        } else if(left.isDouble() || right.isDouble()) {
             return new Value(left.toDouble().equals(right.toDouble()));
         } else if(left.isString() && right.isString()) {
             return new Value(left.toString().equals(right.toString()));
@@ -47,9 +45,7 @@ public class EqualityExpr {
     private Value notEqual(Value left, Value right) {
         if(left.isInteger() && right.isInteger()) {
             return new Value(!left.toInt().equals(right.toInt()));
-        } else if(left.isDouble() && right.isDouble()) {
-            return new Value(!left.toDouble().equals(right.toDouble()));
-        } else if((left.isInteger() || left.isDouble()) && (right.isInteger() || right.isDouble())) {
+        } else if(left.isDouble() || right.isDouble()) {
             return new Value(!left.toDouble().equals(right.toDouble()));
         } else if(left.isString() && right.isString()) {
             return new Value(!left.toString().equals(right.toString()));
