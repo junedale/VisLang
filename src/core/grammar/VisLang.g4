@@ -76,7 +76,11 @@ funCall
     ;
 
 block
-    : (expr Semicolon | statement)+
+    : (expr Semicolon | statement)*  returnStatement?
+    ;
+
+returnStatement
+    : Return expr Semicolon
     ;
 
 expr
@@ -95,7 +99,6 @@ expr
     | Boolean                                                                                 #booleanLiteral
     | Identifier                                                                              #identifier
     | Null                                                                                    #null
-    | Return expr                                                                             #return
     | Lparen expr Rparen                                                                      #groupings
     ;
 

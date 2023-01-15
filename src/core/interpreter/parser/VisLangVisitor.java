@@ -121,6 +121,12 @@ public interface VisLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBlock(VisLangParser.BlockContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link VisLangParser#returnStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitReturnStatement(VisLangParser.ReturnStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code identifier}
 	 * labeled alternative in {@link VisLangParser#expr}.
 	 * @param ctx the parse tree
@@ -218,13 +224,6 @@ public interface VisLangVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitEquality(VisLangParser.EqualityContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code return}
-	 * labeled alternative in {@link VisLangParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitReturn(VisLangParser.ReturnContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code unaryNot}
 	 * labeled alternative in {@link VisLangParser#expr}.
