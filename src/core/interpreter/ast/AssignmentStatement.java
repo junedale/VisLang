@@ -25,7 +25,11 @@ public class AssignmentStatement {
 
     public Value evaluate(AssignmentContext ctx) {
         String identifier = ctx.Identifier().getText();
-        scope.assign(identifier, eval.visit(ctx.expr()));
+        if(ctx.expr() != null) {
+            scope.assign(identifier, eval.visit(ctx.expr()));
+        } else if(ctx.funCall() != null) {
+            scope.assign(identifier, eval.visit(ctx.funCall()));
+        }
         return Value.VOID;
     }
 
