@@ -100,6 +100,7 @@ expr
     | Identifier                                                                              #identifier
     | Null                                                                                    #null
     | Lparen expr Rparen                                                                      #groupings
+    | funCall                                                                                 #funCallExpr
     ;
 
 assignment

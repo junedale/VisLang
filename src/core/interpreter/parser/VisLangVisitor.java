@@ -162,6 +162,13 @@ public interface VisLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLogicalAnd(VisLangParser.LogicalAndContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code funCallExpr}
+	 * labeled alternative in {@link VisLangParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunCallExpr(VisLangParser.FunCallExprContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code assignAction}
 	 * labeled alternative in {@link VisLangParser#expr}.
 	 * @param ctx the parse tree

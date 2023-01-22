@@ -186,6 +186,13 @@ public class VisLangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implement
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitFunCallExpr(VisLangParser.FunCallExprContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitAssignAction(VisLangParser.AssignActionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
