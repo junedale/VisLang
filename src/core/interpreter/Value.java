@@ -1,7 +1,7 @@
 package core.interpreter;
 
 public class Value {
-    public static final Value NULL = new Value();
+    public static final Value NULL = null;
     public static final Value VOID = new Value();
 
     private final Object value;
