@@ -23,6 +23,13 @@ public class Block {
             eval.visit(stat);
         for(ExprContext expr : ctx.expr())
             eval.visit(expr);
+
+        if(ctx.returnStatement() != null) {
+            Evaluator.rValue.setVal(eval.visit(ctx.returnStatement().expr()));
+            eval.setScope(scope.getAncestor());
+            throw Evaluator.rValue;
+        }
+
         eval.setScope(scope.getAncestor());
         return Value.VOID;
     }
