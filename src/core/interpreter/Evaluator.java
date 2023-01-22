@@ -4,9 +4,13 @@ import core.interpreter.parser.VisLangBaseVisitor;
 import core.interpreter.parser.VisLangParser;
 import core.interpreter.ast.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Evaluator extends VisLangBaseVisitor<Value> {
 
     private ScopeResolver scope;
+    private Map<String, Function> fun;
     private final Literals literal;
     private final ConditionalExpr comparison;
     private final LogicalExpr logic;
@@ -18,9 +22,12 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     private final LoopStatement loop;
     private final DecisionStatement decision;
     private final EqualityExpr equality;
+    private final FunctionDeclaration funDecl;
+    public static ReturnValue rValue = new ReturnValue();
 
-    public Evaluator(ScopeResolver scope) {
+    public Evaluator(ScopeResolver scope, Map<String, Function> fun) {
         this.scope = scope;
+        this.fun   = new HashMap<>(fun);
         literal    = new Literals();
         comparison = new ConditionalExpr(this);
         logic      = new LogicalExpr(this);
@@ -32,6 +39,7 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
         loop       = new LoopStatement(this);
         decision   = new DecisionStatement(this);
         equality   = new EqualityExpr(this);
+        funDecl    = new FunctionDeclaration(this, scope);
     }
 
     @Override
@@ -143,6 +151,25 @@ public class Evaluator extends VisLangBaseVisitor<Value> {
     @Override
     public Value visitIfStatement(VisLangParser.IfStatementContext ctx) {
         return decision.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitFunDecl(VisLangParser.FunDeclContext ctx) {
+        return funDecl.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitFunCall(VisLangParser.FunCallContext ctx) {
+        return call.evaluate(ctx);
+    }
+
+    @Override
+    public Value visitFunCallExpr(VisLangParser.FunCallExprContext ctx) {
+        return call.evaluate(ctx);
+    }
+
+    public Map<String, Function> getFun() {
+        return fun;
     }
 
     public void setScope(ScopeResolver scope) {
