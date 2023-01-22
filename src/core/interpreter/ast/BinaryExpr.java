@@ -1,5 +1,6 @@
 package core.interpreter.ast;
 
+import core.interpreter.exception.TypeException;
 import core.interpreter.parser.VisLangLexer;
 import core.interpreter.parser.VisLangParser.BinaryAddContext;
 import core.interpreter.parser.VisLangParser.BinaryMulContext;
@@ -57,8 +58,10 @@ public class BinaryExpr {
             return new Value(left.toInt() * right.toInt());
         } else if(left.isDouble() && right.isDouble()) {
             return new Value(left.toDouble() * right.toDouble());
+        } else if(left.isDouble() || right.isDouble()) {
+            return new Value(left.toDouble() * right.toDouble());
         } else {
-            throw new RuntimeException("Incompatible Type: ");
+            throw new TypeException("Incompatible Type:\n" + right.getType() + "\n" + left.getType());
         }
     }
 
@@ -67,8 +70,10 @@ public class BinaryExpr {
             return new Value(left.toInt() / right.toInt());
         } else if(left.isDouble() && right.isDouble()) {
             return new Value(left.toDouble() / right.toDouble());
+        } else if(left.isDouble() || right.isDouble()) {
+            return new Value(left.toDouble() / right.toDouble());
         } else {
-            throw new RuntimeException("Incompatible Type: ");
+            throw new TypeException("Incompatible Type:\n" + right.getType() + "\n" + left.getType());
         }
     }
 
@@ -78,7 +83,7 @@ public class BinaryExpr {
         } else if(left.isDouble() && right.isDouble()) {
             return new Value(left.toDouble() % right.toDouble());
         } else {
-            throw new RuntimeException("Incompatible Type: ");
+            throw new TypeException("Incompatible Type:\n" + right.getType() + "\n" + left.getType());
         }
     }
 
@@ -87,8 +92,10 @@ public class BinaryExpr {
             return new Value(left.toInt() - right.toInt());
         } else if(left.isDouble() && right.isDouble()) {
             return new Value(left.toDouble() - right.toDouble());
+        } else if(left.isDouble() || right.isDouble()) {
+            return new Value(left.toDouble() - right.toDouble());
         } else {
-            throw new RuntimeException("Incompatible Type: ");
+            throw new TypeException("Incompatible Type:\n" + right.getType() + "\n" + left.getType());
         }
     }
 
@@ -99,10 +106,10 @@ public class BinaryExpr {
             return new Value(left.toDouble() + right.toDouble());
         } else if(left.isString() && right.isString()) {
             return new Value(left.toStr() + right.toStr());
-        } else if(((left.isInteger() || left.isDouble()) && right.isString()) || (left.isString() && (right.isInteger() || right.isDouble()))) {
-            return new Value(left.toStr() + right.toStr());
+        } else if(left.isDouble() || right.isDouble()) {
+            return new Value(left.toDouble() + right.toDouble());
         } else {
-            throw new RuntimeException("Incompatible Type: ");
+            throw new TypeException("Incompatible Type:\n" + right.getType() + "\n" + left.getType());
         }
     }
 }
