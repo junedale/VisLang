@@ -34,13 +34,21 @@ public class ScopeResolver {
         }
     }
 
+    public void assignParam(String identifier, Value val) {
+        varList.put(identifier, val);
+    }
+
     public Value resolve(String identifier) {
+        return resolve(identifier, true);
+    }
+
+    public Value resolve(String identifier, boolean checkAncestor) {
         Value val = varList.get(identifier);
 
         if(val != null) {
             return val;
         } else if(!isGlobal()) {
-            return ancestor.resolve(identifier);
+            return ancestor.resolve(identifier, !checkAncestor);
         } else {
             return Value.NULL;
         }
