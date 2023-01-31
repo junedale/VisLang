@@ -11,6 +11,8 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
+import java.util.Map;
 
 public class Interpreter {
 
@@ -21,9 +23,13 @@ public class Interpreter {
         VisLangParser parser       = new VisLangParser(tokens);
 
         try {
+            Map<String, Function> fun  = Collections.emptyMap();
             ScopeResolver scope        = new ScopeResolver();
-            Evaluator evaluator        = new Evaluator(scope);
+            Evaluator evaluator        = new Evaluator(scope, fun);
             ParseTree tree             = parser.program();
+            if(parser.getNumberOfSyntaxErrors() > 0) {
+                System.exit(-1);
+            }
             evaluator.visit(tree);
         } catch(ParseCancellationException e) {
             if(e.getCause() instanceof InputMismatchException ex) {
